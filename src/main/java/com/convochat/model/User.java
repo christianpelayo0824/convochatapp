@@ -1,20 +1,40 @@
 package com.convochat.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "User")
 public class User {
 
+	@Id
+	@Column(name = "uid")
 	private int uid;
+
+	@Column(name = "firstname")
 	private String firstname;
+
+	@Column(name = "lastname")
 	private String lastname;
+
+	@Column(name = "email")
+	private String email;
+
+	@Column(name = "password")
+	private String password;
 
 	public User() {
 		super();
 	}
 
-	public User(int uid, String firstname, String lastname) {
+	public User(String firstname, String lastname, String email, String password) {
 		super();
-		this.uid = uid;
 		this.firstname = firstname;
 		this.lastname = lastname;
+		this.email = email;
+		this.password = password;
 	}
 
 	public int getUid() {
@@ -41,9 +61,26 @@ public class User {
 		this.lastname = lastname;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
 	@Override
 	public String toString() {
-		return "User [uid=" + uid + ", firstname=" + firstname + ", lastname=" + lastname + "]";
+		return "User [uid=" + uid + ", firstname=" + firstname + ", lastname=" + lastname + ", email=" + email
+				+ ", password=" + password + "]";
 	}
 
 }
