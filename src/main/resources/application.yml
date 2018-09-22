@@ -4,9 +4,9 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/mydatabase
     username: root
     password: 
-    url: jdbc:mysql://localhost/mydatabase
     
   jpa:
     show-sql: true

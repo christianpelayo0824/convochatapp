@@ -9,7 +9,6 @@ public class MainController {
 
 	@GetMapping(value = "/index")
 	public String getIndex(Model model) {
-
 		return "/index";
 	}
 
